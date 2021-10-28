@@ -157,7 +157,7 @@ def get_sink_nodes(graph):
 def get_contig_from_path(path):
     contig = ""
     contig+=path[0]
-    for node in path[1:]:       
+    for node in path[1:]:
         contig+=node[-1]
     return contig
 
