@@ -175,7 +175,13 @@ def get_contigs(graph, starting_nodes, ending_nodes):
 
 def save_contigs(contigs_list, output_file):
 
-    pass
+    with open(output_file,"w+") as file_out:
+        for index, contigs in enumerate(contigs_list):
+            contig = contigs[0]
+            file_out.write("> contig_{} len ={}".format(index, len(contig)))
+            file_out.write("{}".format(fill(contig,80)))
+
+    return file_out
 
 
 def fill(text, width=80):
