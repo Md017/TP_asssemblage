@@ -28,13 +28,13 @@ random.seed(9001)
 from random import randint
 import statistics
 
-__author__ = "Mamadou DANSOKHO"
+__author__ = "Mamadou DANSOKHO" and "Mehdi MUNIM"
 __copyright__ = "Universite Paris Diderot"
-__credits__ = ["Mamadou DANSOKHO"]
+__credits__ = ["Mamadou DANSOKHO and Mehdi MUNIM"]
 __license__ = "GPL"
 __version__ = "1.0.0"
-__maintainer__ = "Mamadou DANSOKHO"
-__email__ = "your@email.fr"
+__maintainer__ = "Mamadou DANSOKHO and Mehdi MUNIM"
+__email__ = "mamadoudansokho5@gmail.com"
 __status__ = "Developpement"
 
 def isfile(path):
