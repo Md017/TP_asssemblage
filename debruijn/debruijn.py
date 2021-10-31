@@ -14,10 +14,11 @@
 """Perform assembly based on debruijn graph."""
 
 import argparse
+import pickle
 import os
 import sys
 import networkx as nx
-import matplotlib
+import matplotlib.pyplot as plt
 from operator import itemgetter
 import random
 
@@ -303,9 +304,10 @@ def main():
     """
     Main program function
     """
-    """"
+    
     # Get arguments
     args = get_arguments()
+    
     #****************************1) reading file and building graph
     kmer_dict =build_kmer_dict(args.fastq_file,args.kmer_size)
     graph = build_graph(kmer_dict)
@@ -315,8 +317,9 @@ def main():
     graph = solve_entry_tips(graph, get_starting_nodes(graph))
     graph = solve_out_tips(graph, get_sink_nodes(graph))
     #******************************4) writing contigs
-    save_contigs(get_contigs(graph, get_starting_nodes(graph),get_sink_nodes(graph)), args.saved_contigs_output_file)
-    """
+    save_contigs(get_contigs(graph, get_starting_nodes(graph),get_sink_nodes(graph)), args.output_file)
+    
+    
 
 
 
@@ -324,11 +327,11 @@ def main():
     # A decommenter si vous souhaitez visualiser un petit 
     # graphe
     # Plot the graph
-    # if args.graphimg_file:
-    #     draw_graph(graph, args.graphimg_file)
+    if args.graphimg_file:
+        draw_graph(graph, args.graphimg_file)
     # Save the graph in file
-    # if args.graph_file:
-    #     save_graph(graph, args.graph_file)
+    #if args.graph_file:
+        #save_graph(graph, args.graph_file)
 
 
 
